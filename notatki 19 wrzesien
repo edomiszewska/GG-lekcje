@@ -22,4 +22,50 @@ JAKIE MAMY UPRAWNIENIA?
 - insert - wprowadzanie danych
 - update - modyfikacje rekordów
 - select - wybieranie
-- grand option - zezwala na nadawanie i usuwanie uprawnien innym uzytkownikom
+- grant option - zezwala na nadawanie i usuwanie uprawnien innym uzytkownikom
+
+
+przyklad z grant -
+grant permission on datatbase.table to 'username'@'localhost';
+
+w celu usuniecia uprawnien uzytkownika -
+revoke permission on datatbase.table to 'username'@'localhost';
+
+usuniecie uzytkownika - drop user 'username'@'localhost';
+
+
+nazwa hosta - roznica kiedy jest % a localhost
+chodzi o logowanie, aby uzytkownik mogl sie zalogowac z dowolnego punktu 
+w dowolnej domenie to mamy %, a jesli ograniczamy do jednego komputera
+i lokalizacji - uzywamy localhost.
+
+przyklad stworzenia uzytkownika z % uprawnieniem:
+create user user@' %.nazwa_domeny' identified by 'haslo';
+create user uzytkownik@' %' identified by 'haslo';
+create user 'user'@' 213.186.88.112' identified by 'haslo';
+
+3 rodzaje ról:
+- serwerowe
+- bazo danowe
+- nadane przez uyztkownika
+
+
+
+ROLE 
+sysadmin - przypisany do tej roli sa wlascicielami kazdej bazy i moga robic co chca
+serveradmin - role administrowania serwera (nie administruja bazami danych) ale moga konfigurowac system
+setupadmin - maja dostep do konfiguracji systemu
+securityadmin- administratorzy bezpieczenstwa (nie do baz danych)
+processadmin - kontroluja procesy uruchomione na serwerze (nie bazie danych)
+basecreatoradmin - tworza wszystko co zwiazane z baza danych i usuwaja kopie
+diskadmin - zarzadzanie dyskami
+vulcanadmin - opcje masowego wstawiania danych (insert itd)
+
+
+ROLE BAZO DANOWE
+dbowner - wlasciciel bazy danych
+
+mozemy tworzyc wlasne role:
+create role `admin`, `sysq`;
+create role `ddddd`@`localhost`;
+
