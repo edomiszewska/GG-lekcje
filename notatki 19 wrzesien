@@ -69,3 +69,35 @@ mozemy tworzyc wlasne role:
 create role `admin`, `sysq`;
 create role `ddddd`@`localhost`;
 
+grant select, insert, update, delete 
+on dbo.ksiazki
+to blok1; 
+- uzytkownicy przypisani do roli blok 
+moga wykonywac te dla tej bazy danych
+odbieranie tak samo tylko z revoke
+
+deny - jawne odebranie uprawnien do obiektow uzytkownikowi.
+
+
+tabele slownikowe czyli tam gdzie sa informacje na temat praw dostepu uzytkownikow
+host, db, user, tables_priv, columns_priv, procs_priv
+
+user mysql
+select host, user from user where user='username';
+
+grant update on db.* to username;
+czyli z bazy danych db username moze updeatowac kazda tabele.
+
+usage - nie zostaly nadane zadne prawa?
+
+grant usage on *.* to username with (..);
+
+
+show grants for username;
+- pokazuje jakie uprawnienia ma
+
+
+select * from user; - jacy uzytkownicy istnieja w bazie danych
+
+
+
