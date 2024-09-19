@@ -1,0 +1,25 @@
+--uzytkownicy i uprawnienia--
+
+create user 'username'@'localhost' identified by 'password';
+- tworzymy uzytkownika
+
+
+NADAWANIE I USUWANIE UPRAWNIEN
+*.* wszystko wszystkim - do wszystkich baz i wszystkich tabel
+* - na baze danych
+**- druga oznacza tabele
+
+nadawanie - 
+grant all privileges on *.* to 'username'@'localhost';
+flush privileges; - potwierdzenie nadania uprawnien
+
+
+JAKIE MAMY UPRAWNIENIA?
+- all privileges - wszystkie uprawnienia
+- create - zezwala na tworzenie
+- drop - zezwala na usuwanie baz danych i tabel
+- delete - zezwala na kombinowanie rekordami usuwanie ich
+- insert - wprowadzanie danych
+- update - modyfikacje rekordów
+- select - wybieranie
+- grand option - zezwala na nadawanie i usuwanie uprawnien innym uzytkownikom
