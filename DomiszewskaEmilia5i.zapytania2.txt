@@ -1,0 +1,16 @@
+ZAPYTANIA2
+
+CREATE USER 'uczen2'@'localhost' identified by 'uczen123'; 
+- utworzenie z haslem
+
+CREATE USER 'uczen2a'@'%' identified by 'uczen321'; 
+- z %
+
+grant delete,select,insert on ksiegarnia.klient to 'uczen2';
+- nadanie uprawnien
+
+grant all PRIVILEGES on ksiegarnia.zamowienia to 'uczen2';
+- wszystkie uprawnienia
+
+revoke delete on ksiegarnia.zamowienia from 'uczen2';
+- odebranie uprawnien

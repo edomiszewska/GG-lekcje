@@ -1,0 +1,47 @@
+ZAPYTANIA ZROBIONE
+
+
+CREATE USER 'spejson'@'localhost'; 
+- utworzenie spejsona
+
+grant select, insert on ksiegarnia.* to 'spejson'; 
+- nadanie uprawnien
+
+show GRANTS for 'spejson'; 
+- pokazanie uprawnien
+
+CREATE USER 'spejson2'@'localhost'; 
+- utworzenie spejsona2
+
+grant usage on ksiegarnia.* to 'spejson2';
+- zadne uprawnienia
+
+show GRANTS for 'spejson2'; 
+- pokazanie uprawnien (ktorych nie ma)
+
+
+select * from mysql.user where user='spejson2'; 
+- czy jest uzytkownik w bazie danych 
+
+
+
+z uzytkownikiem 'Michał':
+
+CREATE USER 'Michał'@'localhost'; 
+
+grant usage on ksiegarnia.* to 'Michał';
+
+select * from mysql.user where user='Michał'; 
+
+grant select, insert on ksiegarnia.* to 'Michał'; 
+
+show GRANTS for 'Michał'; 
+
+
+
+
+
+
+
+
+
